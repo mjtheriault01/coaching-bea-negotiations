@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>BEA Professional Excellence Initiative</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700;800&family=Merriweather:wght@300;400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reset.min.css" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.css" />
+  <style>
+    /* ============================================================
+       BEA BRAND COLORS & BASE STYLES
+    ============================================================ */
+    :root {
+      --crimson:  #E4002B;
+      --black:    #000000;
+      --white:    #FFFFFF;
+      --gold:     #FFC72C;
+      --gray:     #6B6B6B;
+      --light:    #F5F5F5;
+    }
+
+    .reveal {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 32px;
+      color: var(--black);
+      background: var(--white);
+    }
+
+    /* ---- Section label chip in top-left ---- */
+    .reveal .slides section::before {
+      content: attr(data-label);
+      display: block;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.38em;
+      font-weight: 700;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--crimson);
+      margin-bottom: 0.4em;
+    }
+
+    /* ---- Headings ---- */
+    .reveal h1, .reveal h2, .reveal h3 {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      color: var(--black);
+      text-transform: none;
+      line-height: 1.15;
+      letter-spacing: -0.01em;
+    }
+
+    .reveal h1 { font-size: 1.9em; }
+    .reveal h2 { font-size: 1.35em; color: var(--crimson); }
+    .reveal h3 { font-size: 1.05em; color: var(--black); }
+
+    .reveal p, .reveal li { font-size: 0.68em; line-height: 1.65; }
+    .reveal ul { list-style: none; padding: 0; margin: 0; }
+    .reveal ul li::before {
+      content: '— ';
+      color: var(--crimson);
+      font-weight: 700;
+    }
+
+    /* ---- Accent elements ---- */
+    .gold    { color: var(--gold); }
+    .crimson { color: var(--crimson); }
+    .big-stat {
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 800;
+      font-size: 2.2em;
+      color: var(--gold);
+      line-height: 1;
+    }
+    .stat-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.55em;
+      color: var(--gray);
+      margin-top: 0.2em;
+    }
+
+    /* ---- Tables ---- */
+    .reveal table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 0.52em;
+    }
+    .reveal table th {
+      background: var(--crimson);
+      color: var(--white);
+      padding: 0.5em 0.7em;
+      font-weight: 700;
+      text-align: center;
+    }
+    .reveal table td {
+      padding: 0.45em 0.7em;
+      border-bottom: 1px solid #e0e0e0;
+      text-align: center;
+    }
+    .reveal table tr:nth-child(even) td { background: #fafafa; }
+    .reveal table tr.highlight td {
+      background: #fff8e1;
+      font-weight: 700;
+      color: var(--black);
+    }
+    .reveal table td.gold-cell {
+      color: #b8860b;
+      font-weight: 700;
+    }
+
+    /* ---- Layout helpers ---- */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 1.5em;
+      align-items: start;
+    }
+    .three-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr 1fr;
+      gap: 1em;
+      align-items: start;
+    }
+    .card {
+      background: var(--light);
+      border-left: 5px solid var(--crimson);
+      border-radius: 4px;
+      padding: 0.8em 1em;
+    }
+    .card.gold-card { border-left-color: var(--gold); }
+    .card h3 { margin: 0 0 0.4em; font-size: 0.75em; color: var(--crimson); }
+    .card.gold-card h3 { color: #b8860b; }
+    .card p, .card li { font-size: 0.6em; margin: 0.2em 0; }
+
+    /* ---- Divider bar ---- */
+    .divider {
+      height: 4px;
+      background: linear-gradient(to right, var(--crimson), var(--gold));
+      border: none;
+      margin: 0.5em 0 0.8em;
+    }
+
+    /* ---- Pill / badge ---- */
+    .badge {
+      display: inline-block;
+      background: var(--crimson);
+      color: var(--white);
+      font-family: 'Montserrat', sans-serif;
+      font-weight: 700;
+      font-size: 0.52em;
+      padding: 0.25em 0.8em;
+      border-radius: 20px;
+      margin-bottom: 0.5em;
+    }
+    .badge.gold-badge { background: var(--gold); color: var(--black); }
+
+    /* ---- Title slide ---- */
+    .title-slide {
+      background: var(--black) !important;
+      color: var(--white) !important;
+    }
+    .title-slide h1 { color: var(--white) !important; font-size: 1.6em !important; }
+    .title-slide h2 { color: var(--gold) !important; font-size: 0.85em !important; }
+    .title-slide p  { color: #cccccc !important; font-size: 0.55em !important; }
+    .title-slide .divider { margin: 0.8em 0; }
+
+    /* ---- Section divider slides ---- */
+    .section-slide { background: var(--crimson) !important; }
+    .section-slide h1 { color: var(--white) !important; font-size: 1.8em !important; }
+    .section-slide h2 { color: var(--gold) !important; font-size: 0.9em !important; }
+    .section-slide::before { display: none !important; }
+
+    /* ---- Closing slide ---- */
+    .close-slide { background: var(--black) !important; }
+    .close-slide h1 { color: var(--gold) !important; font-size: 1.7em !important; }
+    .close-slide h2 { color: var(--white) !important; font-size: 0.85em !important; }
+    .close-slide p  { color: #cccccc !important; font-size: 0.6em !important; }
+    .close-slide::before { display: none !important; }
+
+    /* ---- Quote / pullout ---- */
+    .pullout {
+      border-left: 6px solid var(--gold);
+      padding: 0.6em 1em;
+      background: #fff8e1;
+      font-style: italic;
+      font-size: 0.7em;
+      color: var(--black);
+      margin: 0.6em 0;
+    }
+
+    /* ---- Objection / rebuttal layout ---- */
+    .obj-box {
+      background: #fff0f0;
+      border-left: 5px solid var(--crimson);
+      padding: 0.6em 0.9em;
+      border-radius: 4px;
+      font-size: 0.58em;
+    }
+    .obj-box strong { color: var(--crimson); font-family: 'Montserrat', sans-serif; }
+    .rebuttal-box {
+      background: #f0fff4;
+      border-left: 5px solid #2e7d32;
+      padding: 0.6em 0.9em;
+      border-radius: 4px;
+      font-size: 0.58em;
+      margin-top: 0.5em;
+    }
+    .rebuttal-box strong { color: #2e7d32; font-family: 'Montserrat', sans-serif; }
+
+    /* ---- Progress bar ---- */
+    .reveal .progress { background: rgba(0,0,0,0.2); }
+    .reveal .progress span { background: var(--crimson); }
+
+    /* ---- Controls ---- */
+    .reveal .controls button { color: var(--crimson); }
+  </style>
+</head>
+<body>
+<div class="reveal">
+  <div class="slides">
+
+    <!-- =====================================================
+         SLIDE 1: TITLE
+    ===================================================== -->
+    <section class="title-slide" data-background-color="#000000">
+      <span class="badge gold-badge">BEA &bull; Batavia Education Association</span>
+      <h1>The Professional<br>Excellence Initiative</h1>
+      <hr class="divider" />
+      <h2>Stipend Indexing &amp; Extended Season Pay</h2>
+      <p>A proposal for fair, automatic, and fiscally responsible coach &amp; sponsor compensation</p>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 2: THE PROBLEM
+    ===================================================== -->
+    <section data-label="The Problem">
+      <h1>Two Inequities. One Solution.</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div class="card">
+          <h3>Problem 1 — Stipends Don't Grow</h3>
+          <p>Stipends are fixed dollar amounts. When the district raises base salaries, coaches &amp; sponsors get nothing. Every contract cycle restarts from zero.</p>
+        </div>
+        <div class="card gold-card">
+          <h3>Problem 2 — Playoff Work is Unpaid</h3>
+          <p>Coaches who lead teams deep into the postseason work weeks of extra hours for <strong>$0 in additional pay</strong> — while ticket takers and chain workers earn $25/hr at the same games.</p>
+        </div>
+      </div>
+      <div class="pullout" style="margin-top:0.8em;">
+        "We should not financially penalize our most successful educators by asking them to work for a lower effective hourly rate the further they advance."
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION DIVIDER: PART 1
+    ===================================================== -->
+    <section class="section-slide" data-background-color="#E4002B">
+      <span class="badge" style="background:#000;color:#fff;">Part 1 of 2</span>
+      <h1>The Stipend Index</h1>
+      <hr class="divider" style="background:linear-gradient(to right,#fff,#FFC72C);" />
+      <h2>Securing Automatic, Guaranteed Raises</h2>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 3: HOW THE INDEX WORKS
+    ===================================================== -->
+    <section data-label="Part 1 — Stipend Index">
+      <h1>How the Index Works</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div>
+          <h2>Current Model</h2>
+          <ul>
+            <li>Stipends are <strong>flat dollar amounts</strong></li>
+            <li>Base salary rises ~1.8%/yr — stipends stay frozen</li>
+            <li>Coaches must fight for increases every contract cycle</li>
+            <li>Pits coaches against classroom teachers for the same pool</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Proposed Index Model</h2>
+          <ul>
+            <li>Each stipend becomes a <strong>% of the base salary</strong></li>
+            <li>When base salary goes up, stipends go up <em>automatically</em></li>
+            <li>No renegotiation needed — it's built into the contract</li>
+            <li>A win for base salary = a win for every coach &amp; sponsor</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pullout">
+        "A win for base salaries is automatically a win for our high-level program leaders."
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 4: THE TWO SCENARIOS
+    ===================================================== -->
+    <section data-label="Part 1 — Stipend Index">
+      <h1>Two Scenarios at the Table</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div class="card">
+          <h3>Scenario A — Primary Proposal<br><span style="color:#b8860b;">(Index from $50,000 Base)</span></h3>
+          <p>Set index percentages using the original 2023-24 base of $50,000.</p>
+          <p><strong>Effect:</strong> Applies an immediate ~5.34% retroactive bump for 2026-27 — capturing 4 years of missed growth.</p>
+          <p><strong>Use when:</strong> Board is willing to remedy historical flat pay.</p>
+        </div>
+        <div class="card gold-card">
+          <h3>Scenario B — Fallback Proposal<br><span style="color:#b8860b;">(Index from $52,671 Base)</span></h3>
+          <p>Set index percentages using the new $52,671 base salary.</p>
+          <p><strong>Effect:</strong> No immediate jump in 2026-27. Cost to district = <strong>$0</strong> in Year 1. Stipends begin growing in 2027-28.</p>
+          <p><strong>Use when:</strong> Board pushes back on the initial increase.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 5: INDEX SCHEDULE TABLE
+    ===================================================== -->
+    <section data-label="Part 1 — Stipend Index">
+      <h1>The Indexed Stipend Schedule</h1>
+      <h3 style="font-size:0.6em;color:var(--gray);">Benchmark Base: $50,000 (2023-24) &nbsp;|&nbsp; Applied Base: $52,671 (2026-27)</h3>
+      <hr class="divider" />
+      <table>
+        <thead>
+          <tr>
+            <th>Cat.</th>
+            <th>1-3 Yrs Index</th>
+            <th>4-8 Yrs Index</th>
+            <th>9-13 Yrs Index</th>
+            <th>14+ Yrs Index</th>
+            <th>14+ Yrs (26-27 $)</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>A</td><td>1.28%</td><td>1.71%</td><td>—</td><td>—</td><td>—</td></tr>
+          <tr><td>B</td><td>2.14%</td><td>2.99%</td><td>3.85%</td><td>—</td><td>—</td></tr>
+          <tr><td>C</td><td>2.57%</td><td>3.40%</td><td>4.28%</td><td>5.13%</td><td>$2,702</td></tr>
+          <tr><td>D</td><td>2.99%</td><td>3.85%</td><td>4.70%</td><td>5.56%</td><td>$2,929</td></tr>
+          <tr><td>E</td><td>4.28%</td><td>5.56%</td><td>6.84%</td><td>8.13%</td><td>$4,280</td></tr>
+          <tr><td>F</td><td>5.13%</td><td>6.84%</td><td>8.55%</td><td>10.26%</td><td>$5,406</td></tr>
+          <tr><td>G</td><td>5.99%</td><td>8.38%</td><td>10.78%</td><td>13.17%</td><td>$6,937</td></tr>
+          <tr><td>H</td><td>8.10%</td><td>10.09%</td><td>12.49%</td><td>14.88%</td><td>$7,839</td></tr>
+          <tr><td>I</td><td>9.41%</td><td>11.80%</td><td>14.20%</td><td>16.59%</td><td>$8,739</td></tr>
+          <tr><td>J</td><td>11.12%</td><td>13.51%</td><td>15.91%</td><td>18.30%</td><td>$9,640</td></tr>
+          <tr><td>K</td><td>12.83%</td><td>15.22%</td><td>17.62%</td><td>20.01%</td><td>$10,541</td></tr>
+          <tr class="highlight"><td><strong>L</strong></td><td><strong>14.54%</strong></td><td><strong>16.93%</strong></td><td><strong>19.33%</strong></td><td><strong>21.72%</strong></td><td class="gold-cell"><strong>$11,441</strong></td></tr>
+        </tbody>
+      </table>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 6: REAL MONEY EXAMPLE
+    ===================================================== -->
+    <section data-label="Part 1 — Stipend Index">
+      <h1>Real Money. Real Impact.</h1>
+      <h3 style="font-size:0.6em;color:var(--gray);">Example: Category D Sponsor — 14+ Years Experience</h3>
+      <hr class="divider" />
+      <div class="two-col">
+        <div>
+          <table>
+            <thead>
+              <tr>
+                <th>School Year</th>
+                <th>Flat Model</th>
+                <th>Indexed Model</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr><td>2026–27</td><td>$2,780</td><td class="gold-cell"><strong>$2,929</strong></td></tr>
+              <tr><td>2027–28</td><td>$2,780</td><td class="gold-cell"><strong>$2,981</strong></td></tr>
+              <tr><td>2028–29</td><td>$2,780</td><td class="gold-cell"><strong>~$3,034</strong></td></tr>
+              <tr><td>2029–30</td><td>$2,780</td><td class="gold-cell"><strong>~$3,089</strong></td></tr>
+            </tbody>
+          </table>
+          <p style="font-size:0.45em;color:var(--gray);margin-top:0.5em;">*2028-30 projected at 1.8% annual base increase</p>
+        </div>
+        <div>
+          <div style="text-align:center;padding-top:0.5em;">
+            <div class="big-stat">$309</div>
+            <div class="stat-label">Cumulative gain over 4 years (Cat. D)</div>
+          </div>
+          <div style="text-align:center;margin-top:1em;">
+            <div class="big-stat crimson">$580</div>
+            <div class="stat-label">Cumulative gain over 4 years (Cat. L, 14+ yrs)</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 7: BOARD OBJECTIONS
+    ===================================================== -->
+    <section data-label="Part 1 — Stipend Index">
+      <h1>Anticipating Board Objections</h1>
+      <hr class="divider" />
+      <div class="obj-box">
+        <strong>Objection 1 — "Budget Creep":</strong> Automatic escalators prevent accurate long-term budget forecasting.
+      </div>
+      <div class="rebuttal-box">
+        <strong>Rebuttal:</strong> Dollar increases are modest — a head football coach gains ~$200/year. A locked-in percentage <em>improves</em> forecasting; the Board always knows exactly what stipends will cost.
+      </div>
+      <div class="obj-box" style="margin-top:0.6em;">
+        <strong>Objection 2 — "Retroactive Jump" (Scenario A):</strong> Paying a ~5.34% immediate increase is an unbudgeted cash grab.
+      </div>
+      <div class="rebuttal-box">
+        <strong>Rebuttal:</strong> Our fallback (Scenario B) costs the district $0 in Year 1. We come to the table with flexibility — that is fiscal responsibility, not a cash grab.
+      </div>
+      <div class="obj-box" style="margin-top:0.6em;">
+        <strong>Objection 3 — "Loss of Flexibility":</strong> Automatic raises drain money from classroom resources.
+      </div>
+      <div class="rebuttal-box">
+        <strong>Rebuttal:</strong> Historically base salaries win because they affect more people, leaving coaches behind. Linking both eliminates internal infighting — a win for base salary is a win for everyone.
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SECTION DIVIDER: PART 2
+    ===================================================== -->
+    <section class="section-slide" data-background-color="#E4002B">
+      <span class="badge" style="background:#000;color:#fff;">Part 2 of 2</span>
+      <h1>Extended Season Pay</h1>
+      <hr class="divider" style="background:linear-gradient(to right,#fff,#FFC72C);" />
+      <h2>Non-Guaranteed Time. Professional Rate.</h2>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 8: THE TICKET TAKER INEQUITY
+    ===================================================== -->
+    <section data-label="Part 2 — Extended Season Pay">
+      <h1>The Ticket Taker Inequity</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div class="card gold-card">
+          <h3>What Happens Today</h3>
+          <p>Ticket sellers, announcers, timers, and chain workers earn <strong>$25/hr</strong> for game-day event support.</p>
+          <p style="margin-top:0.6em;">Coaches who lead those same teams into the postseason earn <strong>$0 in additional pay</strong> — their stipend covers only the regular season.</p>
+        </div>
+        <div class="card">
+          <h3>The Logical Problem</h3>
+          <p>The contract defines the $25/hr rate for duties "which do <em>not</em> require the professional judgment of a licensed educator."</p>
+          <p style="margin-top:0.6em;">Playoff coaching — advanced strategy, direct student mentorship, high-stakes decision-making — should never be paid at the same rate as selling tickets.</p>
+        </div>
+      </div>
+      <div class="pullout">
+        "We are classifying the most professional work in the building at the same rate as the most operational."
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 9: THE FRAMEWORK
+    ===================================================== -->
+    <section data-label="Part 2 — Extended Season Pay">
+      <h1>The Extended Season Pay Framework</h1>
+      <hr class="divider" />
+      <div class="three-col">
+        <div class="card">
+          <h3>The Rate</h3>
+          <p><strong style="font-size:1.3em;color:var(--crimson);">$35/hr</strong></p>
+          <p>The contract's "professional rate" — already used for summer school, driver's ed, and curriculum work. Coaching qualifies.</p>
+        </div>
+        <div class="card gold-card">
+          <h3>Overnight / State Trips</h3>
+          <p><strong style="font-size:1.3em;color:#b8860b;">$250/day</strong></p>
+          <p>Per-diem replaces hourly tracking for state trips — covers 24/7 supervision without time-sheet complexity.</p>
+        </div>
+        <div class="card">
+          <h3>Accountability</h3>
+          <p>All hours pre-certified via a <strong>Playoff Calendar</strong> (e.g., "Standard Playoff Week = 15 hours"). Triggered by a bracket win. Approved by Head Coach + AD.</p>
+        </div>
+      </div>
+      <div class="pullout" style="margin-top:0.7em;">
+        "Non-Guaranteed Time" — not "Playoff Pay" — because every sport's postseason structure is unique.
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 10: WHAT COUNTS
+    ===================================================== -->
+    <section data-label="Part 2 — Extended Season Pay">
+      <h1>Billable vs. Non-Billable Time</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div>
+          <h2 style="color:#2e7d32;">Billable Time</h2>
+          <ul>
+            <li>Practices beyond the regular season (~2 hrs/day)</li>
+            <li>Game day: setup + event + travel block (~6 hrs)</li>
+            <li>Supervising/coaching at state meets or playoff games</li>
+            <li>Travel time to away/overnight state competitions</li>
+          </ul>
+        </div>
+        <div>
+          <h2>Non-Billable Time</h2>
+          <ul>
+            <li>Film review, game planning, preparation work</li>
+            <li>Voluntary Sunday night or off-day team events</li>
+            <li>Unapproved extra practice time (coach's own initiative)</li>
+            <li>Any hours exceeding the AD-approved maximum threshold</li>
+          </ul>
+        </div>
+      </div>
+      <div class="card" style="margin-top:0.8em;">
+        <h3>Sport-Specific Rules Matter</h3>
+        <p><strong>Football:</strong> Non-Guaranteed Time begins after the regular season — up to 5 extra weeks for the full coaching staff.</p>
+        <p><strong>Track &amp; Field:</strong> All teams advance to sectionals automatically, so Non-Guaranteed Time begins <em>after</em> sectionals — only state qualifiers' week counts.</p>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 11: THE MATH OF FAIRNESS
+    ===================================================== -->
+    <section data-label="Part 2 — Extended Season Pay">
+      <h1>The Math of Fairness</h1>
+      <h3 style="font-size:0.6em;color:var(--gray);">Historical Reality — 2-Year Actuals at $35/hr</h3>
+      <hr class="divider" />
+      <div class="two-col">
+        <table>
+          <thead>
+            <tr>
+              <th>Sport</th>
+              <th>2-Year Total</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr><td>Football</td><td>$49,140</td></tr>
+            <tr><td>Track (B/G)</td><td>$12,600</td></tr>
+            <tr><td>Wrestling (B/G)</td><td>$10,710</td></tr>
+            <tr><td>Cross Country (B/G)</td><td>$7,280</td></tr>
+            <tr><td>Other Sports</td><td>$11,585</td></tr>
+            <tr class="highlight"><td><strong>2-Year Total</strong></td><td class="gold-cell"><strong>$91,315</strong></td></tr>
+            <tr class="highlight"><td><strong>Annual Average</strong></td><td class="gold-cell"><strong>$45,658</strong></td></tr>
+          </tbody>
+        </table>
+        <div>
+          <div style="text-align:center;padding-top:0.3em;">
+            <div class="big-stat">$45,658</div>
+            <div class="stat-label">Average annual cost to the district</div>
+          </div>
+          <div style="text-align:center;margin-top:0.9em;">
+            <div class="big-stat crimson">&lt; 0.1%</div>
+            <div class="stat-label">Of total district budget</div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 12: THE POOL OF MONEY ARGUMENT
+    ===================================================== -->
+    <section data-label="Part 2 — Extended Season Pay">
+      <h1>The "Pool of Money" Argument</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div style="text-align:center;padding: 1em 0;">
+          <div style="font-family:'Montserrat',sans-serif;font-size:0.7em;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4em;">The Cost of "No"</div>
+          <div class="big-stat crimson">$5.28</div>
+          <div class="stat-label">Per paycheck, per teacher — if that $45,657 were split<br>as a general raise across 360 teachers instead</div>
+        </div>
+        <div style="text-align:center;padding: 1em 0;">
+          <div style="font-family:'Montserrat',sans-serif;font-size:0.7em;font-weight:700;color:var(--gray);text-transform:uppercase;letter-spacing:.1em;margin-bottom:.4em;">The Value of "Yes"</div>
+          <div class="big-stat">$45,658</div>
+          <div class="stat-label">Ensures no coach ever works<br>for free during the postseason again</div>
+        </div>
+      </div>
+      <div class="pullout">
+        For the cost of a cup of coffee per paycheck, the district can stop asking its most successful educators to volunteer their professional expertise.
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 13: STRATEGIC TALKING POINTS
+    ===================================================== -->
+    <section data-label="Strategic Alignment">
+      <h1>Strategic Talking Points</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div class="card">
+          <h3>End the "Success Tax"</h3>
+          <p>Coaches should not be financially penalized because their team wins. Advancement should <em>increase</em> professional value, not reduce effective hourly rate to zero.</p>
+        </div>
+        <div class="card gold-card">
+          <h3>Internal Retention</h3>
+          <p>Fair compensation keeps our own teachers in coaching roles. External vendors don't know our students, culture, or community. Keep talent in-house.</p>
+        </div>
+        <div class="card gold-card">
+          <h3>Budgetary Certainty</h3>
+          <p>The Pre-Set Calendar + Historical Average is proof of fiscal responsibility. Less than 0.1% of the budget, with zero risk of time-sheet padding.</p>
+        </div>
+        <div class="card">
+          <h3>Lead the Conference</h3>
+          <p>Professionalizing the coaching contract positions BHS as a leader in the Dukane Conference — attracting top-tier talent and setting the standard.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 14: THE LANGUAGE TO USE
+    ===================================================== -->
+    <section data-label="Strategic Alignment">
+      <h1>Language &amp; Framing</h1>
+      <hr class="divider" />
+      <div class="two-col">
+        <div>
+          <h2 style="color:#b22222;">Avoid</h2>
+          <ul>
+            <li>"We want more money"</li>
+            <li>"Playoff pay" (implies only football)</li>
+            <li>"Retroactive raise"</li>
+            <li>"Budget increase"</li>
+          </ul>
+        </div>
+        <div>
+          <h2 style="color:#2e7d32;">Use Instead</h2>
+          <ul>
+            <li>"Indexing professional value to ensure internal retention"</li>
+            <li>"Non-Guaranteed Time" (equitable across all sports)</li>
+            <li>"Fiscal alignment with the Strategic Plan"</li>
+            <li>"Predictable, transparent compensation structure"</li>
+          </ul>
+        </div>
+      </div>
+      <div class="pullout" style="margin-top:0.8em;">
+        Frame every dollar as <strong>Strategic Alignment</strong> and <strong>Fiscal Predictability</strong> — not a demand, but a system improvement.
+      </div>
+    </section>
+
+    <!-- =====================================================
+         SLIDE 15: CLOSING
+    ===================================================== -->
+    <section class="close-slide" data-background-color="#000000">
+      <h1>The Natural Raise</h1>
+      <hr class="divider" />
+      <h2>A unified model. A fair contract. A win for everyone.</h2>
+      <br />
+      <div class="three-col" style="gap:0.8em;">
+        <div style="text-align:center;">
+          <div class="big-stat">Index</div>
+          <div class="stat-label" style="color:#ccc;">Stipends tied to base salary — automatic raises for coaches &amp; sponsors</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="big-stat">$35/hr</div>
+          <div class="stat-label" style="color:#ccc;">Professional rate for Non-Guaranteed Time — no more working for free</div>
+        </div>
+        <div style="text-align:center;">
+          <div class="big-stat">&lt;0.1%</div>
+          <div class="stat-label" style="color:#ccc;">Of budget — responsible, data-backed, and sustainable</div>
+        </div>
+      </div>
+      <p style="margin-top:1em;font-size:0.5em;color:#aaa;">BEA Professional Excellence Initiative &nbsp;&bull;&nbsp; Batavia Education Association</p>
+    </section>
+
+  </div><!-- /.slides -->
+</div><!-- /.reveal -->
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.6.1/reveal.min.js"></script>
+<script>
+  Reveal.initialize({
+    hash: true,
+    slideNumber: 'c/t',
+    transition: 'fade',
+    transitionSpeed: 'fast',
+    controls: true,
+    progress: true,
+    center: true,
+    width: 1200,
+    height: 700,
+    margin: 0.04,
+  });
+</script>
+</body>
+</html>
