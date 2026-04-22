@@ -127,11 +127,6 @@
     .card.gold-card h3 { color: #b8860b; }
     .card p, .card li { font-size: 0.6em; margin: 0.2em 0; }
 
-    /* Cards on image-background slides get white bg for contrast */
-    .reveal section[data-background-image] .card {
-      background: rgba(255,255,255,0.93);
-    }
-
     .divider {
       height: 4px;
       background: linear-gradient(to right, var(--crimson), var(--gold));
@@ -181,11 +176,6 @@
       color: var(--black);
       margin: 0.6em 0;
     }
-    /* On image slides, pullout needs opacity boost */
-    .reveal section[data-background-image] .pullout {
-      background: rgba(255,248,225,0.95);
-    }
-
     .obj-box {
       background: #fff0f0;
       border-left: 5px solid var(--crimson);
@@ -213,29 +203,6 @@
     .reveal .progress span { background: var(--crimson); }
     .reveal .controls button { color: var(--crimson); }
 
-    /* Photo credit */
-    .photo-credit {
-      position: absolute;
-      bottom: 0.3em;
-      right: 0.6em;
-      font-family: 'Montserrat', sans-serif;
-      font-size: 0.28em;
-      color: rgba(255,255,255,0.5);
-      letter-spacing: 0.05em;
-    }
-
-    /* Inline background image — bypasses Reveal.js background layer */
-    .bg-photo {
-      position: absolute;
-      inset: 0;
-      background-size: cover;
-      background-position: center;
-      z-index: 0;
-      pointer-events: none;
-      filter: grayscale(100%) contrast(1.3);
-    }
-    .reveal section { overflow: hidden; }
-    .reveal section > *:not(.bg-photo) { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -257,8 +224,6 @@
          SLIDE 2: WHO WE ARE
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-coach-clipboard-huddle.png"
-      data-background-opacity="0.32"
       data-label="About This Proposal">
       <h1>Who We Are &amp; What This Is</h1>
       <hr class="divider" />
@@ -279,7 +244,6 @@
       <div class="pullout" style="margin-top:0.8em;">
         "We want you to leave this meeting with a complete answer to every question the district will ask — because we've already thought of them."
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -310,8 +274,6 @@
          Image: teacher in classroom (contrast backdrop)
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-mentor-intensity.png"
-      data-background-opacity="0.32"
       data-label="The Case">
       <h1>The Labor Rights Reality</h1>
       <hr class="divider" />
@@ -330,7 +292,6 @@
       <div class="pullout" style="margin-top:0.8em;">
         "The only difference between this and forced unpaid overtime is that coaches stopped fighting it."
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -370,8 +331,6 @@
          SLIDE 6: THE PROBLEM
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-postseason-coach-walk.png"
-      data-background-opacity="0.32"
       data-label="The Problem">
       <h1>Two Inequities. One Solution.</h1>
       <hr class="divider" />
@@ -388,7 +347,6 @@
       <div class="pullout" style="margin-top:0.8em;">
         "We should not financially penalize our most successful educators — asking them to work for a lower effective hourly rate, or no rate at all, the further their programs advance."
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -436,8 +394,6 @@
          SLIDE 8: OUR PROPOSAL
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-coach-clipboard-huddle.png"
-      data-background-opacity="0.32"
       data-label="Part 1 — Stipend Index">
       <h1>Our Proposal</h1>
       <hr class="divider" />
@@ -450,7 +406,6 @@
       <div class="pullout" style="margin-top:0.8em;">
         This is not a raise — it is a correction. Four years of professional work deserves to be valued the same way as four years of classroom work.
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -583,8 +538,6 @@
          Image: coach on sideline
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-postseason-coach-walk.png"
-      data-background-opacity="0.32"
       data-label="Part 2 — Extended Season Pay">
       <h1>The Ticket Taker Inequity</h1>
       <hr class="divider" />
@@ -603,7 +556,6 @@
       <div class="pullout">
         "We are classifying the most professional work in the building at the same rate as the most operational."
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -611,8 +563,6 @@
          Image: club sponsor with students
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-academic-sponsor-close.png"
-      data-background-opacity="0.32"
       data-label="Part 2 — Extended Season Pay">
       <h1>Not Just Sports — All Activities</h1>
       <hr class="divider" />
@@ -636,7 +586,6 @@
       <div class="pullout" style="margin-top:0.8em;">
         "Extended time is not a reward for dedication — it is the direct consequence of excellence. We should compensate both the time and the excellence that caused it."
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -670,8 +619,6 @@
          SLIDE 15: BILLABLE vs NON-BILLABLE
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-mentor-intensity.png"
-      data-background-opacity="0.32"
       data-label="Part 2 — Extended Season Pay">
       <h1>Billable vs. Non-Billable Time</h1>
       <hr class="divider" />
@@ -700,7 +647,6 @@
         <p><strong>Example — Track &amp; Field:</strong> All teams automatically advance to sectionals, so Non-Guaranteed Time does <em>not</em> begin there — only the state qualifiers' week counts.</p>
         <p style="margin-top:0.4em;"><strong>Example — Math Team:</strong> Regular season meets are covered by stipend. Only the state competition week — triggered by winning a qualifying round — is compensable.</p>
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -791,8 +737,6 @@
          Image: team celebration moment
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-pregame-huddle.png"
-      data-background-opacity="0.32"
       data-label="Shared Interests">
       <h1>What We Both Want</h1>
       <hr class="divider" style="margin-bottom:0.5em;" />
@@ -820,15 +764,12 @@
           <p style="font-size:0.58em;">The district's own strategic plan calls for robust extracurricular opportunities. That goal cannot be fulfilled while actively disincentivizing the educators who run those programs. This is alignment with your stated priorities.</p>
         </div>
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
          SLIDE 19: UNION TEAM OBJECTIONS
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-negotiation-table.png"
-      data-background-opacity="0.22"
       data-label="Objections &amp; Answers">
       <h1>If the BEA Team Says&hellip;</h1>
       <hr class="divider" />
@@ -853,15 +794,12 @@
       <div class="rebuttal-box fragment" data-fragment-index="3">
         <strong>Answer:</strong> The stipend index benefits every single stipend holder in the district — every sport at every level, every club sponsor, every fine arts director. That is a significant portion of the BEA membership. And the labor rights principle — mandatory uncompensated time — protects every member.
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
          SLIDE 20: DISTRICT OBJECTIONS
     ===================================================== -->
     <section
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-negotiation-table.png"
-      data-background-opacity="0.22"
       data-label="Objections &amp; Answers">
       <h1>If the District Says&hellip;</h1>
       <hr class="divider" />
@@ -886,7 +824,6 @@
       <div class="rebuttal-box fragment" data-fragment-index="3">
         <strong>Answer:</strong> Stipends were raised 1% at the start of the last contract and then frozen — while base salaries increased 1.78% per year over the same period. That is not addressing it. That is falling further behind. A one-time flat bump without indexing guarantees this same conversation in the next contract.
       </div>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
     <!-- =====================================================
@@ -955,8 +892,6 @@
     <section
       class="close-slide"
       data-background-color="#000000"
-      data-background-image="https://res.cloudinary.com/dikkdclum/image/upload/e_grayscale,e_contrast:30,f_auto,q_auto,w_1400/bea-slides/bea-pregame-huddle.png"
-      data-background-opacity="0.35">
       <h1>The Natural Raise</h1>
       <hr class="divider" />
       <h2>A unified model. A fair contract. A win for everyone.</h2>
@@ -976,7 +911,6 @@
         </div>
       </div>
       <p style="margin-top:1em;font-size:0.5em;color:#aaa;">BEA Professional Excellence Initiative &nbsp;&bull;&nbsp; Batavia Education Association &nbsp;&bull;&nbsp; Presented to BEA Negotiating Team</p>
-      <span class="photo-credit">Image: AI-generated via Google Imagen &bull; Hosted on Cloudinary</span>
     </section>
 
   </div><!-- /.slides -->
@@ -997,16 +931,6 @@
     margin: 0.04,
   });
 
-  // Inject background images directly into slides — bypasses Reveal.js background layer
-  document.querySelectorAll('section[data-background-image]').forEach(function(el) {
-    var url = el.getAttribute('data-background-image');
-    var opacity = parseFloat(el.getAttribute('data-background-opacity') || '0.32');
-    var bg = document.createElement('div');
-    bg.className = 'bg-photo';
-    bg.style.backgroundImage = "url('" + url + "')";
-    bg.style.opacity = opacity;
-    el.insertBefore(bg, el.firstChild);
-  });
 </script>
 </body>
 </html>
