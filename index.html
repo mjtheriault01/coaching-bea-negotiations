@@ -223,6 +223,19 @@
       color: rgba(255,255,255,0.5);
       letter-spacing: 0.05em;
     }
+
+    /* Inline background image — bypasses Reveal.js background layer */
+    .bg-photo {
+      position: absolute;
+      inset: 0;
+      background-size: cover;
+      background-position: center;
+      z-index: 0;
+      pointer-events: none;
+      filter: grayscale(100%) contrast(1.3);
+    }
+    .reveal section { overflow: hidden; }
+    .reveal section > *:not(.bg-photo) { position: relative; z-index: 1; }
   </style>
 </head>
 <body>
@@ -982,6 +995,17 @@
     width: 1200,
     height: 700,
     margin: 0.04,
+  });
+
+  // Inject background images directly into slides — bypasses Reveal.js background layer
+  document.querySelectorAll('section[data-background-image]').forEach(function(el) {
+    var url = el.getAttribute('data-background-image');
+    var opacity = parseFloat(el.getAttribute('data-background-opacity') || '0.32');
+    var bg = document.createElement('div');
+    bg.className = 'bg-photo';
+    bg.style.backgroundImage = "url('" + url + "')";
+    bg.style.opacity = opacity;
+    el.insertBefore(bg, el.firstChild);
   });
 </script>
 </body>
