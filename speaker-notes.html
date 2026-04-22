@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Speaker Notes — BEA Professional Excellence Initiative</title>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@600;700;800&family=Merriweather:wght@400;700&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --crimson: #E4002B;
+      --gold: #b8860b;
+      --black: #111;
+      --gray: #555;
+      --light: #f7f7f7;
+      --border: #ddd;
+    }
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+    body {
+      font-family: 'Merriweather', Georgia, serif;
+      font-size: 11.5px;
+      color: var(--black);
+      background: #fff;
+      padding: 0.6in 0.65in;
+      max-width: 8.5in;
+      margin: 0 auto;
+    }
+
+    /* HEADER */
+    .doc-header {
+      border-bottom: 4px solid var(--crimson);
+      padding-bottom: 0.4em;
+      margin-bottom: 0.6em;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+    .doc-header h1 {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 15px;
+      font-weight: 800;
+      color: var(--crimson);
+      letter-spacing: -0.01em;
+    }
+    .doc-header .meta {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9px;
+      font-weight: 600;
+      color: var(--gray);
+      text-align: right;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    /* SECTION LABEL */
+    .section-label {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5px;
+      font-weight: 700;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: #fff;
+      background: var(--crimson);
+      display: inline-block;
+      padding: 0.15em 0.6em;
+      border-radius: 2px;
+      margin-bottom: 0.25em;
+      margin-top: 0.6em;
+    }
+
+    /* NOTE BLOCK */
+    .note {
+      border-left: 3px solid var(--crimson);
+      padding: 0.35em 0.6em;
+      margin-bottom: 0.4em;
+      background: var(--light);
+      border-radius: 0 3px 3px 0;
+    }
+    .note.gold { border-left-color: var(--gold); }
+    .note-title {
+      font-family: 'Montserrat', sans-serif;
+      font-size: 9.5px;
+      font-weight: 700;
+      color: var(--crimson);
+      margin-bottom: 0.15em;
+    }
+    .note.gold .note-title { color: var(--gold); }
+    .note p {
+      font-size: 10.5px;
+      line-height: 1.55;
+      color: var(--black);
+    }
+    .note ul {
+      padding-left: 0.9em;
+      margin-top: 0.2em;
+    }
+    .note ul li {
+      font-size: 10.5px;
+      line-height: 1.5;
+      margin-bottom: 0.1em;
+    }
+
+    /* OBJECTION PAIR */
+    .obj-pair {
+      margin-bottom: 0.4em;
+      border-radius: 3px;
+      overflow: hidden;
+    }
+    .obj {
+      background: #fff0f0;
+      border-left: 3px solid var(--crimson);
+      padding: 0.3em 0.6em;
+      font-size: 10px;
+      font-weight: 700;
+      color: var(--crimson);
+      font-family: 'Montserrat', sans-serif;
+    }
+    .ans {
+      background: #f0fff4;
+      border-left: 3px solid #2e7d32;
+      padding: 0.3em 0.6em;
+      font-size: 10px;
+      line-height: 1.5;
+      color: var(--black);
+    }
+    .ans strong { color: #2e7d32; }
+
+    /* TWO COLUMN */
+    .two-col {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.5em;
+    }
+
+    /* DIVIDER */
+    hr { border: none; border-top: 1px solid var(--border); margin: 0.5em 0; }
+
+    /* FOOTER */
+    .doc-footer {
+      margin-top: 0.8em;
+      border-top: 2px solid var(--crimson);
+      padding-top: 0.35em;
+      display: flex;
+      justify-content: space-between;
+      font-family: 'Montserrat', sans-serif;
+      font-size: 8.5px;
+      color: var(--gray);
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+    }
+
+    /* HIGHLIGHT BOX */
+    .highlight-box {
+      background: #fff8e1;
+      border: 1.5px solid var(--gold);
+      border-radius: 3px;
+      padding: 0.35em 0.6em;
+      margin-bottom: 0.4em;
+    }
+    .highlight-box p {
+      font-size: 10.5px;
+      line-height: 1.5;
+      font-style: italic;
+    }
+
+    @media print {
+      body { padding: 0.5in 0.55in; }
+      .section-label { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+      .obj { -webkit-print-color-adjust: exact; print-color-adjust: exact; }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="doc-header">
+    <h1>BEA Professional Excellence Initiative — Speaker Notes</h1>
+    <div class="meta">BEA Negotiating Team Presentation &bull; Confidential<br>Use alongside the slide deck &bull; Print or keep on phone</div>
+  </div>
+
+  <!-- OPENING -->
+  <div class="section-label">Opening: Slides 1–3</div>
+  <div class="two-col" style="margin-top:0.3em;">
+    <div class="note">
+      <div class="note-title">Set the Tone Immediately</div>
+      <p>Open by naming what you are NOT doing. "We are not here to complain — we are here with a fully built solution. We have answers to every question the district will ask, because we've already thought of them."</p>
+    </div>
+    <div class="note gold">
+      <div class="note-title">Establish the No Half-Measures Principle Early</div>
+      <p>The BEA's biggest temptation is to spread money thin and call it a win. Name this directly. "A token raise that doesn't fix the structure is not a win — it is a delay. We are asking for one complete fix."</p>
+    </div>
+  </div>
+
+  <!-- LABOR RIGHTS -->
+  <div class="section-label">The Case: Slides 4–5</div>
+  <div class="note" style="margin-top:0.3em;">
+    <div class="note-title">The "Classroom Teacher Test" — Your Strongest Union Argument</div>
+    <p>This is the slide that should make every rep in the room uncomfortable — in a good way. Pause after you say it. Let it sit. <em>"If the district told a classroom teacher they had to work five extra weeks unpaid, there would be immediate union action. That is exactly what happens to coaches every postseason. The only difference is that coaches stopped fighting it."</em></p>
+    <p style="margin-top:0.3em;">Reinforce: This is not "going above and beyond." This is mandated by IHSA or the governing activity body. The coach cannot refuse. That is the legal and ethical line.</p>
+  </div>
+  <div class="highlight-box">
+    <p><strong>Key phrase to hit verbatim:</strong> "Extended time is not when a coach <em>chooses</em> to do something extra — it is when the governing body of that sport or activity <em>requires</em> it. That is the line. Everything within that mandate is compensable."</p>
+  </div>
+
+  <!-- STIPEND INDEX -->
+  <div class="section-label">Part 1 — Stipend Index: Slides 7–11</div>
+  <div class="two-col" style="margin-top:0.3em;">
+    <div class="note">
+      <div class="note-title">Lead With the Logic, Not the Numbers</div>
+      <p>Don't open with percentages. Open with: "Every time base salary goes up and stipends stay flat, coaches fall further behind. We are asking to link them — permanently — so this never happens again."</p>
+    </div>
+    <div class="note gold">
+      <div class="note-title">The "Not a Raise — A Correction" Line</div>
+      <p>If anyone pushes back on the immediate 5.34% bump, use this: "This is not a raise. The base salary grew for four years and stipends didn't. We are simply aligning them. The dollar amounts are modest — we can show you exactly what a Cat. D sponsor gains in Year 1: $149."</p>
+    </div>
+  </div>
+  <div class="note">
+    <div class="note-title">Objections on the Stipend Index — Quick Responses</div>
+    <ul>
+      <li><strong>"Budget creep"</strong> → "A percentage index is MORE predictable — same formula as base salary. You always know exactly what it costs."</li>
+      <li><strong>"Takes from classroom teachers"</strong> → "Historically, stipends lose because they're in the same fight as salaries. Indexing removes that conflict — a salary win is now a stipend win too."</li>
+    </ul>
+  </div>
+
+  <!-- EXTENDED SEASON -->
+  <div class="section-label">Part 2 — Extended Season Pay: Slides 12–17</div>
+  <div class="two-col" style="margin-top:0.3em;">
+    <div class="note">
+      <div class="note-title">The Ticket Taker Line — Use It</div>
+      <p>This lands every time. "At those same playoff games, the person selling tickets earns $25/hr. The coach who built the team, ran the practice, and is making real-time professional decisions on that sideline earns nothing extra. That is the contract we are asking to fix."</p>
+    </div>
+    <div class="note gold">
+      <div class="note-title">Not Just Sports — Bring In the Club Sponsors</div>
+      <p>Don't let this become a sports-only conversation. Reference the Math Team winning regionals and having to attend state. "That sponsor just had their season extended by two weeks — required by the governing body — for $0 in additional pay. This proposal covers them too."</p>
+    </div>
+  </div>
+  <div class="note">
+    <div class="note-title">The $5.28 vs. $45,658 Contrast — Say It Out Loud</div>
+    <p>When you hit the Pool of Money slide, read the numbers aloud and pause. "If the district took this $45,657 and spread it as a general raise to all 360 teachers, each teacher gets $5.28 per paycheck. Or — we make sure no coach or sponsor ever works a required postseason for free again. That is the choice."</p>
+  </div>
+
+  <!-- SHARED INTERESTS -->
+  <div class="section-label">Shared Interests: Slide 18</div>
+  <div class="note" style="margin-top:0.3em;">
+    <div class="note-title">Lead With Agreement — Then Hold the Line</div>
+    <p>Entering negotiations as adversaries loses. Name what you share: "We want the same things — competitive programs, fair pay for time worked, fiscal responsibility. This proposal serves all three of those goals. We are not asking for something unreasonable. We are asking for alignment with values you already hold."</p>
+    <p style="margin-top:0.3em;"><strong>Retention angle:</strong> "When a veteran coach retires and we're not hiring a new teacher, who picks up that stipend? The qualified candidates in this district are already stretched thin. We have to retain the people we have — and compensation is how you do that."</p>
+  </div>
+
+  <!-- OBJECTIONS -->
+  <div class="section-label">Objections &amp; Answers: Slides 19–20</div>
+  <div style="margin-top:0.3em;">
+
+    <div class="obj-pair">
+      <div class="obj">BEA: "We have bigger priorities this contract."</div>
+      <div class="ans">The index rides alongside base salary — it doesn't compete with it. Extended Season is a separate modest line. These don't take from other priorities.</div>
+    </div>
+
+    <div class="obj-pair">
+      <div class="obj">BEA: "Let's get something for coaches and come back to this."</div>
+      <div class="ans">"Coming back" has been the answer for multiple contracts. A token raise without indexing means the next contract starts from the same broken baseline. One complete fix now is better than three partial fixes over three cycles.</div>
+    </div>
+
+    <div class="obj-pair">
+      <div class="obj">District: "We only have so much money — how do you want to use it?"</div>
+      <div class="ans">Use it to permanently fix the stipend structure and compensate required postseason time. Combined annual cost: less than 0.1% of budget. It removes this issue from every future negotiation.</div>
+    </div>
+
+    <div class="obj-pair">
+      <div class="obj">District: "Automatic raises are unpredictable."</div>
+      <div class="ans">A percentage index is MORE predictable — same formula, same math as base salary. You already do this calculation. It doesn't change, it doesn't surprise you.</div>
+    </div>
+
+    <div class="obj-pair">
+      <div class="obj">District: "We helped coaches last contract."</div>
+      <div class="ans">Stipends went up 1% at the start, then froze. Base salary increased 1.78%/year. That's falling further behind — not helping. A one-time flat bump without indexing guarantees this same conversation next contract.</div>
+    </div>
+
+  </div>
+
+  <!-- FRAMING REMINDERS -->
+  <div class="section-label">Language Reminders</div>
+  <div class="two-col" style="margin-top:0.3em;">
+    <div class="note">
+      <div class="note-title">Say This</div>
+      <ul>
+        <li>"Non-Guaranteed Time" (not playoff pay)</li>
+        <li>"Structural correction" (not retroactive raise)</li>
+        <li>"Required by the governing body" (not going above and beyond)</li>
+        <li>"Predictable, indexed compensation framework"</li>
+        <li>"Fiscal alignment with the Strategic Plan"</li>
+      </ul>
+    </div>
+    <div class="note gold">
+      <div class="note-title">Not This</div>
+      <ul>
+        <li>"We want more money" — too general</li>
+        <li>"Playoff pay" — implies sports only</li>
+        <li>"Retroactive raise" — triggers budget panic</li>
+        <li>"Budget increase" — sounds like a demand</li>
+        <li>"Coaches deserve..." — sounds emotional, not strategic</li>
+      </ul>
+    </div>
+  </div>
+
+  <div class="doc-footer">
+    <span>BEA Professional Excellence Initiative</span>
+    <span>Confidential — For Presenting Team Use Only</span>
+    <span>Batavia Education Association</span>
+  </div>
+
+</body>
+</html>
