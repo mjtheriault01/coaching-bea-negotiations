@@ -1099,22 +1099,31 @@
 
   const NAV_SLIDE_INDEX = 27;
 
-  Reveal.on('ready', function () {
+  function updateSlideState(slide, indexh) {
     const btn = document.getElementById('paw-nav-btn');
-    btn.style.display = Reveal.getIndices().h === NAV_SLIDE_INDEX ? 'none' : 'flex';
+    btn.style.display = indexh === NAV_SLIDE_INDEX ? 'none' : 'flex';
+    const isRedSlide = slide && slide.classList.contains('section-slide');
+    document.body.classList.toggle('on-red-slide', !!isRedSlide);
+  }
+
+  Reveal.on('ready', function () {
+    updateSlideState(Reveal.getCurrentSlide(), Reveal.getIndices().h);
   });
   Reveal.on('slidechanged', function (e) {
-    const btn = document.getElementById('paw-nav-btn');
-    btn.style.display = e.indexh === NAV_SLIDE_INDEX ? 'none' : 'flex';
+    updateSlideState(e.currentSlide, e.indexh);
   });
 </script>
 
 <!-- Floating paw nav button — always visible, jumps to slide menu -->
 <style>
+  /* Controls contrast on red section slides */
+  .on-red-slide .reveal .controls button { color: #FFC72C; opacity: 1; }
+  .on-red-slide .reveal .controls button:hover { color: #fff; }
+
   #paw-nav-btn {
     position: fixed;
     bottom: 20px;
-    right: 20px;
+    left: 20px;
     z-index: 9999;
     width: 48px;
     height: 48px;
@@ -1140,7 +1149,7 @@
   #paw-nav-btn::after {
     content: 'Jump to any slide';
     position: absolute;
-    right: 56px;
+    left: 56px;
     bottom: 12px;
     background: rgba(0,0,0,0.75);
     color: #fff;
