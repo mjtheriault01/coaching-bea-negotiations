@@ -894,10 +894,10 @@
     <!-- =====================================================
          SLIDE 18b: RESEARCH + DISTRICT MISSION ALIGNMENT
     ===================================================== -->
-    <section data-label="Shared Interests">
-      <h1>What the Research Confirms</h1>
-      <h3 style="font-size:0.52em;color:var(--gray);margin-top:0.1em;">BPS101 Mission: <em>"Always Learning. Always Growing."</em> — This is how extracurriculars deliver on it.</h3>
-      <hr class="divider" style="margin-bottom:0.5em;" />
+    <section data-label="Shared Interests" style="font-size:0.91em;">
+      <h1 style="margin-bottom:0.1em;">What the Research Confirms</h1>
+      <h3 style="font-size:0.52em;color:var(--gray);margin-top:0.05em;">BPS101 Mission: <em>"Always Learning. Always Growing."</em> — This is how extracurriculars deliver on it.</h3>
+      <hr class="divider" style="margin:0.3em 0 0.4em;" />
       <div class="three-col" style="gap:0.75em;">
         <div class="card" style="padding:0.6em 0.9em;">
           <h3 style="margin-bottom:0.2em;">Strategic Goal 1<br><span style="color:var(--gray);font-weight:400;font-size:0.85em;">Maximum Student Achievement</span></h3>
@@ -924,7 +924,7 @@
           </ul>
         </div>
       </div>
-      <div class="pullout" style="margin-top:0.6em;">
+      <div class="pullout" style="margin-top:0.4em;">
         "The most critical variable in whether ECAs produce these outcomes is the presence of a high-quality, committed adult mentor." — Longitudinal Research Synthesis. <strong>Undercompensating and losing experienced coaches and sponsors puts every one of these outcomes at risk.</strong>
       </div>
     </section>
@@ -1134,6 +1134,31 @@
     </section>
 
     <!-- =====================================================
+         RESEARCH SOURCES
+    ===================================================== -->
+    <section data-label="Appendix" style="font-size:0.88em;">
+      <h1 style="margin-bottom:0.1em;">Research Sources</h1>
+      <hr class="divider" style="margin:0.3em 0 0.5em;" />
+      <div class="two-col" style="gap:1.2em;align-items:start;">
+        <ol style="list-style:decimal;padding-left:1.2em;margin:0;">
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Academic Performance &amp; SEL:</strong> CASEL — "What Does the Research Say?" <em>casel.org/fundamentals-of-sel/what-does-the-research-say/</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Attendance &amp; Graduation:</strong> NCES — "Extracurricular Participation and Student Engagement" <em>nces.ed.gov/pubs95/web/95741.asp</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Adult Earnings (10.4% increase):</strong> Checketts, SUU — "High School Extracurricular Activities and Future Success" <em>suu.edu/business/economics/working-paper-series/</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Opioid Misuse Prevention (36%):</strong> PMC/NIH — "Preventing Adolescent Opioid Misuse: Racial/Ethnic Differences in the Protective Effects of ECAs" <em>pmc.ncbi.nlm.nih.gov/articles/PMC9134995/</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Binge Drinking Risk (82%):</strong> PLOS Mental Health — "Adolescent Extracurricular Activities and Perception of Risk of Harm" <em>journals.plos.org/mentalhealth/article?id=10.1371/journal.pmen.0000278</em></li>
+        </ol>
+        <ol start="6" style="list-style:decimal;padding-left:1.2em;margin:0;">
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Mentor Quality (Critical Variable):</strong> Singapore Asia Publishers — "The Importance of Mentors and Coaches in Extracurricular Activities" <em>sapgrp.com/the-importance-of-mentors-and-coaches-in-extracurricular-activities/</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>School Belonging &amp; Dropout:</strong> UKnowledge — "Longitudinal Effects of Participation in Structured Extracurricular Activities" <em>uknowledge.uky.edu/edp_etds/40/</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Academic &amp; Career Benefits:</strong> ERIC — "The Benefits of Participating in Extracurricular Activities" (Christison) <em>files.eric.ed.gov/fulltext/EJ1230758.pdf</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Case for HS Activities:</strong> NFHS — "The Case for High School Activities" <em>nfhs.org/stories/the-case-for-high-school-activities</em></li>
+          <li style="font-size:0.42em;line-height:1.6;margin-bottom:0.3em;"><strong>Comparable District Structure:</strong> Wheaton Warrenville CUSD 200 WWEA Contract 2018–2023 (CPI-indexed stipends) — available via CUSD 200 Human Resources</li>
+        </ol>
+      </div>
+      <p style="font-size:0.36em;color:var(--gray);margin-top:0.5em;font-style:italic;">Full research synthesis available upon request — "Developmental Architectures: Longitudinal Analysis of K-12 Extracurricular Engagement, Mentorship Dynamics, and Student Success Trajectories"</p>
+    </section>
+
+    <!-- =====================================================
          SLIDE NAV: JUMP TO ANY SLIDE
     ===================================================== -->
     <section data-background-color="#111111" data-label="Navigation">
@@ -1240,6 +1265,12 @@
                 { index: 31, title: 'The Natural Raise (Close)' },
               ]
             },
+            {
+              label: 'Appendix',
+              slides: [
+                { index: 32, title: 'Research Sources' },
+              ]
+            },
           ];
 
           const grid = document.getElementById('slide-nav-grid');
@@ -1280,7 +1311,7 @@
     margin: 0.04,
   });
 
-  const NAV_SLIDE_INDEX = 32;
+  const NAV_SLIDE_INDEX = 33;
 
   function updateSlideState(slide, indexh) {
     const btn = document.getElementById('paw-nav-btn');
@@ -1349,7 +1380,7 @@
   #paw-nav-btn:hover::after { opacity: 1; }
 </style>
 
-<div id="paw-nav-btn" onclick="Reveal.slide(32)" title="Jump to any slide">
+<div id="paw-nav-btn" onclick="Reveal.slide(33)" title="Jump to any slide">
   <!-- Paw print SVG -->
   <svg viewBox="0 0 64 64" xmlns="http://www.w3.org/2000/svg">
     <!-- Toes -->
